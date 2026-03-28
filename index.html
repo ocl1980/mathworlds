@@ -4,98 +4,211 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aprende Matemáticas con Minecraft</title>
+
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <!-- EmailJS -->
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
     <style>
         body {
             font-family: 'Inter', sans-serif;
         }
+
         .hero-bg {
             background-image: url('hero.jpg');
             background-size: cover;
             background-position: center;
         }
+
+        .overlay {
+            background: linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.8));
+        }
     </style>
 </head>
-<body class="bg-gray-50">
 
-    <!-- Hero Section -->
-    <section class="hero-bg h-screen flex items-center justify-center text-white relative">
-        <div class="bg-black bg-opacity-50 p-8 rounded-lg text-center mx-4">
-            <h1 class="text-4xl md:text-6xl font-bold mb-4">¡Aprender Matemáticas Jugando Minecraft!</h1>
-            <p class="text-lg md:text-2xl mb-6">Convierte las lecciones de matemáticas en aventuras divertidas en Minecraft Education.</p>
-            <a href="#contacto" class="bg-yellow-500 hover:bg-yellow-600 text-black font-semibold py-3 px-6 rounded-lg transition">Quiero Empezar</a>
+<body class="bg-gray-50 text-gray-800">
+
+<!-- NAVBAR -->
+<header class="fixed w-full z-50 bg-white/80 backdrop-blur shadow-sm">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+        <h1 class="font-bold text-lg">MathCraft</h1>
+        <a href="#contacto" class="bg-yellow-500 hover:bg-yellow-600 px-5 py-2 rounded-lg font-semibold transition">
+            Empezar
+        </a>
+    </div>
+</header>
+
+<!-- HERO -->
+<section class="hero-bg h-screen flex items-center justify-center text-white relative">
+    <div class="absolute inset-0 overlay"></div>
+
+    <div class="relative text-center max-w-3xl px-6">
+        <h1 class="text-4xl md:text-6xl font-extrabold mb-6">
+            Aprender matemáticas nunca fue tan divertido
+        </h1>
+
+        <p class="text-lg md:text-xl mb-8 text-gray-200">
+            Convierte el aprendizaje en una aventura dentro de Minecraft. 
+            Más motivación, más resultados, menos frustración.
+        </p>
+
+        <div class="flex flex-col md:flex-row gap-4 justify-center">
+            <a href="#contacto" class="bg-yellow-500 hover:bg-yellow-600 text-black font-semibold py-3 px-8 rounded-lg transition">
+                🚀 Probar ahora
+            </a>
+
+            <a href="#como-funciona" class="border border-white py-3 px-8 rounded-lg hover:bg-white hover:text-black transition">
+                Ver cómo funciona
+            </a>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Beneficios Section -->
-    <section class="py-16 px-4 md:px-24 bg-white">
-        <h2 class="text-3xl font-bold text-center mb-12">Por qué a tus hijos les encantará</h2>
-        <div class="grid md:grid-cols-3 gap-8">
-            <div class="bg-gray-100 p-6 rounded-lg shadow hover:shadow-lg transition">
-                <img src="juego.jpg" alt="Juego divertido" class="w-full h-48 object-cover rounded mb-4">
-                <h3 class="font-semibold text-xl mb-2">Aprendizaje Lúdico</h3>
-                <p>Matemáticas integradas en juegos interactivos que mantienen la motivación alta.</p>
-            </div>
-            <div class="bg-gray-100 p-6 rounded-lg shadow hover:shadow-lg transition">
-                <img src="minecraft_edu.jpg" alt="Minecraft Education" class="w-full h-48 object-cover rounded mb-4">
-                <h3 class="font-semibold text-xl mb-2">Minecraft Education</h3>
-                <p>Practica con herramientas que tus hijos ya aman, haciendo el aprendizaje natural y divertido.</p>
-            </div>
-            <div class="bg-gray-100 p-6 rounded-lg shadow hover:shadow-lg transition">
-                <img src="progreso.jpg" alt="Progreso en matemáticas" class="w-full h-48 object-cover rounded mb-4">
-                <h3 class="font-semibold text-xl mb-2">Resultados Reales</h3>
-                <p>Observa cómo mejoran en matemáticas mientras se divierten jugando.</p>
+<!-- BENEFICIOS CON IMÁGENES -->
+<section class="py-20 px-6 md:px-24 bg-white">
+    <h2 class="text-4xl font-bold text-center mb-16">
+        Por qué funciona
+    </h2>
+
+    <div class="grid md:grid-cols-3 gap-10">
+        
+        <div class="bg-gray-50 rounded-2xl shadow hover:shadow-xl transition overflow-hidden">
+            <img src="juego.jpg" class="w-full h-48 object-cover">
+            <div class="p-6">
+                <h3 class="font-semibold text-xl mb-3">🎮 Aprendizaje divertido</h3>
+                <p class="text-gray-600">
+                    Tus hijos aprenden sin darse cuenta gracias a dinámicas de juego altamente inmersivas.
+                </p>
             </div>
         </div>
-    </section>
 
-    <!-- Cómo Funciona Section -->
-    <section class="py-16 px-4 md:px-24 bg-gray-50">
-        <h2 class="text-3xl font-bold text-center mb-12">Cómo funciona</h2>
-        <div class="space-y-12 md:space-y-0 md:grid md:grid-cols-3 md:gap-8">
-            <div class="text-center">
-                <img src="beneficioHelp.jpg" alt="Registrarse" class="mx-auto w-32 h-32 mb-4">
-                <h3 class="font-semibold text-xl mb-2">1. Regístrate</h3>
-                <p>Crea una cuenta rápida y sencilla para tus hijos.</p>
-            </div>
-            <div class="text-center">
-                <img src="jugar.jpg" alt="Jugar" class="mx-auto w-32 h-32 mb-4">
-                <h3 class="font-semibold text-xl mb-2">2. Jugar</h3>
-                <p>Accede a aventuras matemáticas dentro de Minecraft Education.</p>
-            </div>
-            <div class="text-center">
-                <img src="progreso2.jpg" alt="Progreso" class="mx-auto w-32 h-32 mb-4">
-                <h3 class="font-semibold text-xl mb-2">3. Progreso</h3>
-                <p>Observa y celebra los logros de tus hijos en cada nivel.</p>
+        <div class="bg-gray-50 rounded-2xl shadow hover:shadow-xl transition overflow-hidden">
+            <img src="minecraft_edu.jpg" class="w-full h-48 object-cover">
+            <div class="p-6">
+                <h3 class="font-semibold text-xl mb-3">🧠 Mayor retención</h3>
+                <p class="text-gray-600">
+                    Aplican las matemáticas en contextos reales dentro del juego, mejorando la comprensión.
+                </p>
             </div>
         </div>
-    </section>
 
-    <!-- Formulario de Contacto -->
-    <section id="contacto" class="py-16 px-4 md:px-24 bg-white">
-        <h2 class="text-3xl font-bold text-center mb-12">¡Únete y comienza hoy!</h2>
-        <form action="mailto:ocl1980@hotmail.com" method="POST" class="max-w-xl mx-auto bg-gray-100 p-8 rounded-lg shadow">
-            <div class="mb-4">
-                <label for="nombre" class="block font-semibold mb-2">Nombre:</label>
-                <input type="text" id="nombre" name="nombre" required class="w-full p-3 rounded border border-gray-300 focus:outline-none focus:ring-2 focus:ring-yellow-400">
+        <div class="bg-gray-50 rounded-2xl shadow hover:shadow-xl transition overflow-hidden">
+            <img src="progreso.jpg" class="w-full h-48 object-cover">
+            <div class="p-6">
+                <h3 class="font-semibold text-xl mb-3">📈 Resultados visibles</h3>
+                <p class="text-gray-600">
+                    Sigue el progreso y observa mejoras reales en poco tiempo.
+                </p>
             </div>
-            <div class="mb-4">
-                <label for="email" class="block font-semibold mb-2">Correo electrónico:</label>
-                <input type="email" id="email" name="email" required class="w-full p-3 rounded border border-gray-300 focus:outline-none focus:ring-2 focus:ring-yellow-400">
-            </div>
-            <div class="mb-4">
-                <label for="mensaje" class="block font-semibold mb-2">Mensaje:</label>
-                <textarea id="mensaje" name="mensaje" rows="5" required class="w-full p-3 rounded border border-gray-300 focus:outline-none focus:ring-2 focus:ring-yellow-400"></textarea>
-            </div>
-            <button type="submit" class="bg-yellow-500 hover:bg-yellow-600 text-black font-semibold py-3 px-6 rounded-lg transition w-full">Enviar</button>
-        </form>
-    </section>
+        </div>
 
-    <!-- Footer -->
-    <footer class="bg-gray-800 text-white py-6 text-center">
-        <p>&copy; 2026 Aprende Matemáticas con Minecraft. Todos los derechos reservados.</p>
-    </footer>
+    </div>
+</section>
+
+<!-- CÓMO FUNCIONA CON IMÁGENES -->
+<section id="como-funciona" class="py-20 px-6 md:px-24 bg-gray-50">
+    <h2 class="text-4xl font-bold text-center mb-16">
+        Así de fácil es empezar
+    </h2>
+
+    <div class="grid md:grid-cols-3 gap-10 text-center">
+
+        <div>
+            <img src="beneficioHelp.jpg" class="mx-auto w-32 h-32 mb-4 object-cover rounded-full">
+            <h3 class="font-semibold text-xl mb-2">1. Regístrate</h3>
+            <p class="text-gray-600">Crea tu cuenta en menos de 1 minuto.</p>
+        </div>
+
+        <div>
+            <img src="jugar.jpg" class="mx-auto w-32 h-32 mb-4 object-cover rounded-full">
+            <h3 class="font-semibold text-xl mb-2">2. Empieza a jugar</h3>
+            <p class="text-gray-600">Accede a los mundos educativos.</p>
+        </div>
+
+        <div>
+            <img src="progreso2.jpg" class="mx-auto w-32 h-32 mb-4 object-cover rounded-full">
+            <h3 class="font-semibold text-xl mb-2">3. Mejora</h3>
+            <p class="text-gray-600">Ve resultados reales en matemáticas.</p>
+        </div>
+
+    </div>
+</section>
+
+<!-- TESTIMONIOS -->
+<section class="py-20 px-6 md:px-24 bg-white">
+    <h2 class="text-4xl font-bold text-center mb-16">
+        Lo que dicen otros padres
+    </h2>
+
+    <div class="grid md:grid-cols-2 gap-10 max-w-4xl mx-auto">
+        <div class="bg-gray-100 p-6 rounded-xl">
+            <p class="mb-4">
+                “Mi hijo ahora pide hacer matemáticas. Nunca pensé que diría eso.”
+            </p>
+            <span class="font-semibold">— Laura, madre de 10 años</span>
+        </div>
+
+        <div class="bg-gray-100 p-6 rounded-xl">
+            <p class="mb-4">
+                “Ha mejorado sus notas en solo 3 semanas.”
+            </p>
+            <span class="font-semibold">— Carlos, padre</span>
+        </div>
+    </div>
+</section>
+
+<!-- CONTACTO -->
+<section id="contacto" class="py-20 px-6 md:px-24 bg-yellow-500 text-center">
+    <h2 class="text-4xl font-bold mb-6">
+	Empieza hoy mismo
+    </h2>
+
+    <form id="contact-form" class="max-w-xl mx-auto bg-white p-8 rounded-xl shadow">
+        <input type="text" name="name" placeholder="Nombre" required class="w-full mb-4 p-3 border rounded">
+        <input type="email" name="email" placeholder="Email" required class="w-full mb-4 p-3 border rounded">
+        <textarea name="message" rows="4" placeholder="Mensaje" class="w-full mb-4 p-3 border rounded"></textarea>
+
+        <button type="submit" class="bg-black text-white py-3 px-6 rounded-lg w-full">
+            Enviar 🚀
+        </button>
+
+        <!-- Mensaje estado -->
+        <p id="status" class="mt-4 text-sm"></p>
+    </form>
+</section>
+
+
+<!-- FOOTER -->
+<footer class="bg-gray-900 text-gray-400 py-8 text-center">
+    <p>© 2026 MathCraft. Todos los derechos reservados.</p>
+</footer>
+
+<script>
+    (function(){
+        emailjs.init("Rz89FObhKuxZlBXDD");
+    })();
+
+    const form = document.getElementById('contact-form');
+    const status = document.getElementById('status');
+
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        status.innerText = "Enviando...";
+console.log(form.name.value, form.email.value, form.message.value);
+        emailjs.sendForm('service_vgikw0o', 'template_d7o6sc6', this)
+            .then(() => {
+                status.innerText = "✅ Mensaje enviado correctamente";
+                form.reset();
+            }, (error) => {
+                status.innerText = "❌ Error al enviar. Inténtalo de nuevo.";
+                console.error(error);
+            });
+    });
+</script>
 
 </body>
 </html>
